@@ -1,0 +1,639 @@
+* {
+    font-weight: 400;
+    font-style: normal;
+    font-size: 16px;
+    font-family: "Figtree", sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: rgb(0, 0, 0);
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    height: 100%;
+    background-color: #000000;
+    overflow-y: scroll;
+}
+
+#cover {
+    height: 100%;
+    background-image: url("../img/fondoi.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#pageTitle {
+    background-color: red;
+    margin-bottom: 60px;
+}
+
+a {
+    text-decoration: none;
+}
+
+header {
+    position: relative;
+    height: 200px;
+    text-align: center;
+    z-index: 4;
+}
+
+#headerHomeCard a {
+    font-family: "Rubik Mono One", monospace;
+    margin: 0 auto;
+    position: fixed;
+    left: 0;
+    right: 0;
+    width: 30%;
+    padding-top: 80px;
+    padding-bottom: 40px;
+    height: 20px;
+    top: -80px;
+    background: rgba(255, 255, 255, 0.3);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(5.5px);
+    -webkit-backdrop-filter: blur(5.5px);
+    border-radius: 0px 0px 10px 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    transition: top 0.25s;
+    text-align: center;
+    color: red;
+    font-size: 26px;
+}
+
+#headerHomeCard a:hover {
+    top: 0;
+    background: red;
+    box-shadow: initial;
+    border: 1px solid red;
+    color: black;
+}
+
+h1 {
+    font-family: "Rubik Mono One", monospace;
+    font-weight: 400;
+    font-size: 1.5rem;
+    text-align: center;
+    margin: auto;
+    padding: 120px 60px 0;
+    font-size: 100px;
+    color: red;
+}
+
+h2 {
+    position: relative;
+    left: -10px;
+    font-family: "Rubik Mono One", monospace;
+    font-weight: 400;
+    font-size: 4rem;
+    font-style: normal;
+    padding: 20px 0;
+    text-align: left;
+    margin: 0;
+    color: black;
+}
+
+h3 {
+    font-family: "Rubik Mono One", monospace;
+    font-weight: 400;
+    font-size: 3.2rem;
+    font-style: normal;
+    text-align: right;
+    margin: 0;
+    color: red;
+    overflow-wrap: anywhere;
+}
+
+li,
+p {
+    line-height: 1.5;
+}
+
+#mainPage {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    gap: 110px;
+}
+
+#footerMenu {
+    position: fixed;
+    width: 100%;
+    bottom: -360px;
+    background-color: red;
+    height: 480px;
+    left: 0;
+    right: 0;
+    transition: bottom 0.25s;
+    margin: 0 auto;
+}
+
+#footerMenu:hover {
+    bottom: 0;
+}
+
+#footerMenu.shouldClose:hover  {
+    bottom: -360px;
+}
+
+#footerMenu div {
+    font-family: "Rubik Mono One", monospace;
+    display: flex;
+    align-items: center;
+    flex-flow: row nowrap;
+    font-style: normal;
+    color: #000000;
+    font-size: 2rem;
+    height: 120px;
+    text-align: center;
+    justify-content: center;
+    border: 0.5px solid #000000;
+}
+
+#footerMenu div a {
+    font-family: "Rubik Mono One", monospace;
+    width: 100%;
+    font-size: 2rem;
+    text-align: center;
+    color: #000000;
+}
+
+#footerMenu div:hover, #footerMenu div:hover a {
+    font-style: normal;
+    color: red;
+    text-align: center;
+    transition: color 0.25s;
+    background-color: #000000;
+}
+
+#footerMenu .hovered {
+    background-color: black;
+    color: red;
+}
+
+#cataloguePage,
+#discPage,
+#aboutPage,
+#references {
+    display: flex;
+    flex-flow: column nowrap;
+    padding: 0px 120px 180px 120px;
+    width: 100%;
+    gap: 60px;
+}
+
+#cataloguePage .cdContainer {
+    display: flex;
+    flex-flow: row-reverse nowrap;
+    width: 100%;
+    gap: 30px;
+    text-align: right;
+}
+
+#cataloguePage .cdContainer p {
+    font-size: 1.2rem;
+}
+
+#cataloguePage>.cdContainer:nth-child(2n) {
+    flex-flow: row nowrap;
+    text-align: left;
+}
+
+#cataloguePage>.cdContainer:nth-child(2n) h3 {
+    text-align: left;
+}
+
+.cdCover img,
+.cdCover {
+    height: 250px;
+    width: 250px;
+}
+
+.cdSubContainer p {
+    color: white;
+    padding-bottom: 20px;
+}
+
+.discTitle {
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+    gap: 20px;
+}
+
+.discTitle div {
+    height: 6px;
+    background: red;
+    flex-grow: 2;
+}
+
+#redBox {
+    padding: 40px;
+    background-color: red;
+    display: flex;
+    flex-flow: row;
+    gap: 60px;
+}
+
+#discPage ul li {
+    font-size: 2rem;
+    color: red;
+    list-style-type: '⇀';
+    padding-left: 20px;
+    margin-left: 30px;
+}
+
+#cdInfo {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+    grid-template-rows: repeat(3, auto);
+}
+
+#cdInfo p,
+#cdInfo blockquote {
+    font-size: 1.5rem;
+}
+
+#cdInfo a{
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-decoration: underline;    
+}
+
+#cdInfo h3 {
+    color: black;
+    font-size: 2.5rem;
+    text-align: left;
+    padding-bottom: 15px;
+}
+
+#cdInfo>h3:first-child {
+    padding-top: 0px;
+}
+
+#detailCdCover {
+    grid-row: 1;
+    grid-column: 1;
+    height: 350px;
+    width: 350px;
+}
+
+#firstAbout {
+    grid-row: 1;
+    grid-column: span 2;
+}
+
+#detailCdCover img {
+    height: 350px;
+    width: 350px;
+}
+
+blockquote {
+    margin: 20px;
+    padding-left: 15px;
+    border-left: #000000 3px solid;
+    grid-row: 3;
+    grid-column: span 3;
+}
+
+#lastAbout {
+    grid-row: 2;
+    grid-column: span 3;
+}
+
+span {
+    font-style: italic;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.discSubTitles {
+    color: red;
+    text-align: left;
+}
+
+#insertedVideo {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    padding-top: 56.25%;
+}
+
+#insertedVideo iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+
+}
+
+#aboutPage img {
+    width: 70%;
+    padding-bottom: 5px;
+}
+
+#aboutPage p,
+#aboutPage span {
+    padding-bottom: 30px;
+    font-size: 1.5rem;
+}
+
+figcaption {
+    padding-bottom: 20px;
+    font-size: 1.2rem;
+}
+
+#references ul>li {
+    font-size: 1.8rem;
+    color: rgb(0, 0, 0);
+    list-style-type: '⇀';
+    padding-left: 20px;
+    margin-left: 30px;
+    padding-bottom: 20px;
+
+}
+
+#references ul li li {
+    color: rgb(0, 0, 0);
+    list-style: none;
+    margin-left: 30px;
+    padding-left: 0;
+    list-style: disc;
+}
+
+#references ul li span {
+    font-size: 1.8rem;
+}
+
+#references h3,
+#aboutPage h3 {
+    font-size: 2.5rem;
+    text-align: left;
+    color: #000;
+}
+
+#references #redBox,
+#aboutPage #redBox {
+    flex-flow: column;
+    text-align: left;
+    align-items: normal;
+    gap: 10px;
+}
+
+
+
+@media only screen and (max-width: 768px) {
+
+    header {
+        height: 150px;
+    }
+
+    #headerHomeCard a {
+        width: 55%;
+    }
+
+    #cataloguePage,
+    #discPage,
+    #aboutPage,
+    #references {
+        padding: 0 25px 180px;
+        gap: 40px;
+    }
+
+    #pageTitle {
+        flex-flow: row;
+        display: flex;
+        margin-bottom: 30px;
+    }
+
+
+    h1 {
+        font-size: 2.8rem;
+        width: 100%;
+        padding: 120px 0px 0;
+    }
+
+    h2 {
+        font-size: 2.5rem;
+        overflow-wrap: break-word;
+        width: 100%;
+    }
+
+    h3,
+    #cdInfo h3,
+    #aboutPage h3,
+    #references h3 {
+        font-size: 2rem;
+        overflow-wrap: anywhere;
+        width: 70%;
+        text-align: left;
+    }
+
+    #cataloguePage>.cdContainer:nth-child(2n),
+    #cataloguePage .cdContainer {
+        text-align: left;
+        flex-flow: column;
+        align-items: center;
+        padding-bottom: 30px;
+    }
+
+    #cdInfo {
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: repeat(4, auto);
+        display: grid;
+        gap: 0;
+    }
+
+    #detailCdCover {
+        grid-row: 1;
+        width: 90%;
+        height: auto;
+        margin: 20px auto 40px;
+    }
+
+    #detailCdCover img {
+        width: 100%;
+        height: auto;
+    }
+
+    #firstAbout {
+        grid-row: 2;
+    }
+
+    blockquote {
+        grid-row: 3;
+    }
+
+    #lastAbout {
+        grid-row: 4;
+    }
+
+    .discTitle {
+        gap: 0;
+    }
+
+    .discTitle h3 {
+        width: 100%;
+    }
+
+    #redBox {
+        flex-flow: column;
+        align-items: center;
+        gap: 40px;
+        padding: 20px;
+    }
+
+    .discTitle div {
+        display: none;
+    }
+
+    .cdCover {
+        width: 80%;
+        height: auto;
+    }
+
+    .cdCover img {
+        width: 100%;
+        height: auto;
+    }
+
+    .discSubTitles {
+        width: 100%;
+    }
+
+    #aboutPage img {
+        width: 100%;
+    }
+
+    #cdInfo h3,
+    #references h3,
+    #aboutPage h3 {
+        width: 100%;
+    }
+
+
+    #cdInfo p,
+    #cdInfo blockquote,
+    #aboutPage p,
+    #aboutPage span, 
+    #cdInfo a {
+        font-size: 1.2rem;
+    }
+    
+
+
+    #references ul li span {
+        font-size: 1.2rem;
+        line-break: anywhere;
+    }
+
+    #references ul>li {
+        margin-left: 0px;
+        padding-bottom: 20px;
+        padding-left: 0px;
+        font-size: 1.2rem;
+        list-style: none;
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+
+    h2 {
+        font-size: 3rem;
+    }
+
+    h3,
+    #cdInfo h3 {
+        font-size: 2.5rem;
+        overflow-wrap: anywhere;
+    }
+
+    #headerHomeCard a {
+        width: 50%;
+    }
+
+    #pageTitle {
+        margin-bottom: 30px;
+    }
+
+    #cataloguePage,
+    #discPage,
+    #aboutPage,
+    #references {
+        padding: 0 40px 180px;
+        gap: 40px;
+    }
+
+    #cdInfo {
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: repeat(4, auto);
+        display: grid;
+        gap: 0px;
+    }
+
+    #detailCdCover {
+        grid-row: 1;
+        width: 60%;
+        height: auto;
+        margin-bottom: 60px;
+    }
+
+    #detailCdCover img {
+        width: 100%;
+        height: auto;
+    }
+
+    #firstAbout {
+        grid-row: 2;
+    }
+
+    blockquote {
+        grid-row: 3;
+    }
+
+    #lastAbout {
+        grid-row: 4;
+    }
+
+
+    #aboutPage img {
+        width: 80%;
+        padding-bottom: 5px;
+    }
+
+    #cataloguePage>.cdContainer:nth-child(2n),
+    #cataloguePage .cdContainer {
+        text-align: left;
+        flex-flow: column;
+        align-items: center;
+        padding-bottom: 30px;
+    }
+
+    #redBox {
+        flex-flow: column;
+        align-items: center;
+        gap: 40px;
+        padding: 30px;
+    }
+
+    .cdCover {
+        width: 60%;
+        height: auto;
+
+    }
+
+    .cdCover img {
+        width: 100%;
+        height: auto;
+    }
+}
