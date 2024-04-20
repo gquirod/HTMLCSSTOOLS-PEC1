@@ -15,7 +15,11 @@ footer.addEventListener('mouseout', function () {
 
 menuButton.addEventListener('click', function () {
   if (menuButton.classList.contains('hovered')) {
+    footer.classList.remove('footerActive')
     footer.classList.add('shouldClose')
+  } else {
+    footer.classList.remove('shouldClose')
+    footer.classList.add('footerActive')
   }
 });
 

@@ -133,7 +133,7 @@ p {
     margin: 0 auto;
 }
 
-#footerMenu:hover {
+#footerMenu:hover, #footerMenu .footerActive{
     bottom: 0;
 }
 
