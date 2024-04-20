@@ -12,7 +12,7 @@ footer.addEventListener('mouseout', function () {
 
 });
 
-menuButton.addEventListener('touchstart', function () {
+menuButton.addEventListener('touchend', function () {
   if (menuButton.classList.contains('hovered')) {
     footer.classList.remove('footerActive');
     menuButton.classList.remove('hovered');
