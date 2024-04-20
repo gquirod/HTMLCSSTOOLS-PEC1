@@ -10,14 +10,7 @@ footer.addEventListener('mouseover', function () {
 footer.addEventListener('mouseout', function () {
   menuButton.classList.remove('hovered');
 
-  footer.classList.remove('shouldClose');
 });
-
-menuButton.addEventListener('click', function () {
-  if (menuButton.classList.contains('hovered')) {
-    footer.classList.add('shouldClose');
-  }
-})
 
 menuButton.addEventListener('touchstart', function () {
   if (menuButton.classList.contains('hovered')) {
