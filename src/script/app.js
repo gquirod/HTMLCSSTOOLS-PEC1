@@ -20,6 +20,11 @@ menuButton.addEventListener('click', function () {
 })
 
 menuButton.addEventListener('touchstart', function () {
-  footer.classList.toggle('footerActive');
-  menuButton.classList.toggle('hovered');
+  if (menuButton.classList.contains('hovered')) {
+    footer.classList.remove('footerActive');
+    menuButton.classList.remove('hovered');
+  } else {
+    footer.classList.add('footerActive');
+    menuButton.classList.add('hovered');
+  }
 })
