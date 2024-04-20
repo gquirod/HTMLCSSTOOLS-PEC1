@@ -14,11 +14,6 @@ if (window.innerWidth > 768){
 }
 
 menuButton.addEventListener('touchend', function () {
-  if (menuButton.classList.contains('hovered')) {
-    footer.classList.remove('footerActive');
-    menuButton.classList.remove('hovered');
-  } else {
-    footer.classList.add('footerActive');
-    menuButton.classList.add('hovered');
-  }
+    footer.classList.toggle('footerActive');
+    menuButton.classList.toggle('hovered');
 })
