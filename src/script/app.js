@@ -10,23 +10,16 @@ footer.addEventListener('mouseover', function () {
 footer.addEventListener('mouseout', function () {
   menuButton.classList.remove('hovered');
 
-  footer.classList.remove('shouldClose')
+  footer.classList.remove('shouldClose');
 });
 
 menuButton.addEventListener('click', function () {
   if (menuButton.classList.contains('hovered')) {
-    footer.classList.add('shouldClose')
+    footer.classList.add('shouldClose');
   }
 })
 
 menuButton.addEventListener('touchstart', function () {
-  footer.classList.toggle('footerActive')
+  footer.classList.toggle('footerActive');
+  menuButton.classList.toggle('hovered');
 })
-
-
-
-;
-
-
-
-
