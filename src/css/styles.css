@@ -408,13 +408,13 @@ blockquote p{
    opacity: 0;
 }
 
-#drawableArrow{
+#arrowContainer svg{
     width: 300px;
     height: auto;
     cursor: pointer;
 }
 
-#drawableArrow path {
+#arrowContainer svg path {
     stroke-width: 1;
     stroke-dasharray: 0;
     stroke: red;
@@ -489,15 +489,15 @@ blockquote p{
     opacity: 0;
 }
 
-#drawableArrow path:nth-child(2) {
+#arrowContainer svg path:nth-child(2) {
     fill: red;
 }
 
-#drawableArrow path:nth-child(1) {
+#arrowContainer svg path:nth-child(1) {
     animation: undraw 1s forwards;
 }
 
-#drawableArrow:hover path:nth-child(1) {
+#arrowContainer svg:hover path:nth-child(1) {
     animation: draw 2s forwards;
 }
 
@@ -618,6 +618,10 @@ figcaption {
 
     header {
         height: 150px;
+    }
+
+    #topText{
+        opacity: 1;
     }
 
     #headerHomeCard{

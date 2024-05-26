@@ -51,7 +51,6 @@ if (window.innerWidth < 768){
     svgArrow.removeEventListener('mouseout', hideText);
     svgArrow.removeEventListener('click', goToTop);
     svgArrow.addEventListener('touchstart', goToTop);
-    topText.classList.add('blink');
   }
   if(headerHomeCard){
     headerHomeCard.removeEventListener('mouseover', activeHeaderState);
