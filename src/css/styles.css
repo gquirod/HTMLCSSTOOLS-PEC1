@@ -630,9 +630,9 @@ figcaption {
         height: 150px;
     }
 
-    #topText{
+    #arrowContainer p {
         opacity: 1;
-    }
+      }
 
     #headerHomeCard{
         width:50%;
