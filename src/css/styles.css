@@ -23,6 +23,7 @@ body {
 #coverPortada {
     object-fit: cover;
   z-index: -1;
+  -webkit-clip-path: url("#clipPath");
   clip-path: url("#clipPath");
   width: 500px;
   height: 500px;
