@@ -182,6 +182,16 @@ p {
     flex-direction: column;
 }
 
+#mainPage svg{
+    width: 100%;
+}
+
+#drawableArrow {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+}
+
 #footerMenu {
     position: fixed;
     width: 100%;
@@ -414,7 +424,7 @@ blockquote p{
     cursor: pointer;
 }
 
-#arrowContainer svg path {
+#drawableArrow svg path {
     stroke-width: 1;
     stroke-dasharray: 0;
     stroke: red;
@@ -489,15 +499,15 @@ blockquote p{
     opacity: 0;
 }
 
-#arrowContainer svg path:nth-child(2) {
+#drawableArrow svg path:nth-child(2) {
     fill: red;
 }
 
-#arrowContainer svg path:nth-child(1) {
+#drawableArrow svg path:nth-child(1) {
     animation: undraw 1s forwards;
 }
 
-#arrowContainer svg:hover path:nth-child(1) {
+#drawableArrow svg:hover path:nth-child(1) {
     animation: draw 2s forwards;
 }
 
