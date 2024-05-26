@@ -25,10 +25,16 @@
     </div>
     <div id="redBox">
         <h3>SOBRE EL GRUPO</h3>
-        <figure>
-          <img src="img/fotogrupal.jpg" alt="Foto del grupo, bajando unas escaleras de perfil">
-          <figcaption>De izq. a der. Salvador, Adrián y Elinor. Foto de Helsinkipro.</figcaption>
-        </figure>
+       
+          <figure>
+              <picture>
+                <source media="(max-width: 768px)" srcset="img/fotogrupal.jpg?as=webP&width=675"  type="image/webp"/>
+                <source media="(max-width: 1024px)" srcset="img/fotogrupal.jpg?as=webP&width=710" type="image/webp"/>
+                <source media="(min-width: 1024px)" srcset="img/fotogrupal.jpg?as=webP&width=820" type="image/webp"/>
+              <img src="img/fotogrupal.jpg" alt="Foto del grupo, bajando unas escaleras de perfil">
+            </picture>
+            <figcaption>De izq. a der. Salvador, Adrián y Elinor. Foto de Helsinkipro.</figcaption>
+          </figure>
         <p>"VVV [Trippin'you] es un trío madrileño neo-bakala que nació para rendir culto al frío, al ruido, a la
           modernidad y a los parkings. Un fin, que encuentra el equilibrio entre la oscuridad generacional y las ganas
           de bailar en la pista. Con letras frenéticas, repletas del espíritu generacional más alternativo, VVV
@@ -42,6 +48,7 @@
         <p>En el apartado de "Discografía", podrás encontrar los principales discos del grupo, con una breve introducción sobre su fecha de publicación, sus productoras o artistas encargadas del arte del disco. Para saber más sobre cada álbum, haz click sobre la foto de la carátula.</p>
         <p>Dentro de cada detalle del disco encontraremos más información sobre cada uno, con citas breves a reviews de otros medios, listado de canciones o un vídeo del single más representativo de dicho álbum. En estos momentos el único disco con una página de detalle es "Vaciador"</p>
     </div>
+    <include src="src/components/scrollToTop.html"></include>
     <include src="src/components/footerMenu.html"></include>
   </main>
 </body>

@@ -25,8 +25,12 @@
       <h2>Discografía</h2>
     </div>
     <div class="cdContainer">
-      <div class="cdCover" data-tilt data-tilt-glare data-tilt-max-glare="0.8"><a href="discDetail.html"><img
-            src="img/a2010261979_10.jpg" alt="Imagen de portada del disco Vaciador, con un grupo de jóvenes encapuchados"></a>
+      <div class="cdCover" data-tilt data-tilt-glare data-tilt-max-glare="0.8"><a href="discDetail.html">
+        <picture>
+          <source media="(max-width: 1024px)" srcset="img/a2010261979_10.jpg?as=webP&width=570"  type="image/webp"/>
+          <source media="(min-width: 1024px)" srcset="img/a2010261979_10.jpg?as=webP&width=250" type="image/webp"/>
+          <img src="img/a2010261979_10.jpg" alt="Imagen de portada del disco Vaciador, con un grupo de jóvenes encapuchados">
+        </picture>
       </div>
       <div class="cdSubContainer">
         <div class="discTitle">
@@ -43,7 +47,12 @@
       </div>
     </div>
     <div id ="turboviolencia" class="cdContainer">
-      <div class="cdCover" data-tilt data-tilt-glare data-tilt-max-glare="0.8"><img src="img/a1756752386_10.jpg" alt="Imagen de portada del disco Turboviolencia, con una foto del ojo rojo de un conejo blanco en portada">
+      <div class="cdCover" data-tilt data-tilt-glare data-tilt-max-glare="0.8">
+        <picture>
+          <source media="(max-width: 1024px)" srcset="img/a1756752386_10.jpg?as=webP&width=570"  type="image/webp"/>
+          <source media="(min-width: 1024px)" srcset="img/a1756752386_10.jpg?as=webP&width=250" type="image/webp"/>
+          <img src="img/a1756752386_10.jpg" alt="Imagen de portada del disco Turboviolencia, con una foto del ojo rojo de un conejo blanco en portada">
+        </picture>
       </div>
       <div class="cdSubContainer">
         <div class="discTitle">
@@ -59,7 +68,12 @@
       </div>
     </div>
     <div class="cdContainer">
-      <div class="cdCover" data-tilt data-tilt-glare data-tilt-max-glare="0.8"><img src="img/a4275451932_10.jpg" alt="Imagen de portada del disco Escama, con una ilustración de una serpiente negra retorciéndose sobre un fondo rojo">
+      <div class="cdCover" data-tilt data-tilt-glare data-tilt-max-glare="0.8">
+        <picture>
+          <source media="(max-width: 1024px)" srcset="img/a4275451932_10.jpg?as=webP&width=570"  type="image/webp"/>
+          <source media="(min-width: 1024px)" srcset="img/a4275451932_10.jpg?as=webP&width=250" type="image/webp"/>
+          <img src="img/a4275451932_10.jpg" alt="Imagen de portada del disco Escama, con una ilustración de una serpiente negra retorciéndose sobre un fondo rojo">
+        </picture>
       </div>
       <div class="cdSubContainer">
         <div class="discTitle">
@@ -72,7 +86,12 @@
       </div>
     </div>
     <div class="cdContainer">
-      <div class="cdCover" data-tilt data-tilt-glare data-tilt-max-glare="0.8"><img src="img/a2841134883_10.jpg" alt="Imagen de portada del disco L'Ennui, con una foto nocturna desenfocada del trío en la calle">
+      <div class="cdCover" data-tilt data-tilt-glare data-tilt-max-glare="0.8">
+        <picture>
+          <source media="(max-width: 1024px)" srcset="img/a2841134883_10.jpg?as=webP&width=570"  type="image/webp"/>
+          <source media="(min-width: 1024px)" srcset="img/a2841134883_10.jpg?as=webP&width=250" type="image/webp"/>
+          <img src="img/a2841134883_10.jpg" alt="Imagen de portada del disco L'Ennui, con una foto nocturna desenfocada del trío en la calle">
+        </picture>
       </div>
       <div class="cdSubContainer">
         <div class="discTitle">
@@ -84,6 +103,7 @@
           Mayo (CA2M). Diseños del disco realizado por Manu Salas y Refugio 93.</p>
       </div>
     </div>
+    <include src="src/components/scrollToTop.html"></include>
     <include src="src/components/footerMenu.html"></include>
   </main>
 </body>

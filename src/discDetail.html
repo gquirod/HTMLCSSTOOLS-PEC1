@@ -27,7 +27,12 @@
     </div>
     <div id="redBox">
       <div id="cdInfo">
-        <div id="detailCdCover" data-tilt data-tilt-glare data-tilt-max-glare="0.8"><img src="img/a2010261979_10.jpg" alt="Imagen de portada del disco Vaciador, con un grupo de jóvenes encapuchados">
+        <div id="detailCdCover" data-tilt data-tilt-glare data-tilt-max-glare="0.8">
+        <picture>
+          <source media="(max-width: 1024px)" srcset="img/trippingyou-cut.jpg?as=webP"  type="image/webp"/>
+          <source media="(min-width: 1024px)" srcset="img/a2010261979_10.jpg?as=webP&width=350" type="image/webp"/>
+          <img src="img/a2010261979_10.jpg" alt="Imagen de portada del disco Vaciador, con un grupo de jóvenes encapuchados">
+        </picture>
         </div>
         <div id="firstAbout"><h3>Sobre el disco</h3>
           <p>Cuarto y, hasta el momento, último disco del trío, lanzado el 30 de noviembre de 2023, y que toma su nombre
@@ -46,11 +51,25 @@
           <p>Vaciador es un homenaje a la lucha autogestionada y a la cultura creada en los márgenes. Larga vida a
             Vaciador." <span>VVV [Trippin'you]</span>
           </p>
+          <img
+            srcset="img/eyemoji-65.webp 65w, img/eyemoji-120.webp 120w"
+            sizes="(max-width: 768px) 65px, 120px"
+            src="img/eyemoji-65.webp"
+            alt=""
+            id="eyeSymbol" />
         </blockquote>
         <div id="lastAbout">
         <p>El hastío y la necesidad de acción frente al desencanto que ya se mostraba en sus anteriores trabajos cobra una mayor
           fuerza en un disco más agresivo, más contundente y que afianza el sonido del grupo después del ya
           sobresaliente <a href="content.html#turboviolencia">Turboviolencia</a></p>
+          <figure>
+            <img   
+            srcset="img/portadaAlternativa-360.jpg?as=webp, img/portadaAlternativa-480.jpg?as=webp 1.5x, img/portadaAlternativa-640.jpg?as=webp 2x"
+            src="img/portadaAlternativa-480.jpg" 
+            alt="Imagen alternativa para la portada del disco Vaciador" 
+            id="altCover">
+            <figcaption>Portada alternativa del disco Vaciador</figcaption>
+          </figure>
         </div>
       </div>
     </div>
@@ -72,6 +91,7 @@
         title="YouTube video player"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
         referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+    <include src="src/components/scrollToTop.html"></include>
     <include src="src/components/footerMenu.html"></include>
   </main>
 </body>

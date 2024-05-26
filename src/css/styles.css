@@ -7,6 +7,7 @@
     padding: 0;
     box-sizing: border-box;
     color: rgb(0, 0, 0);
+    scroll-behavior: smooth;
 }
 
 html {
@@ -19,12 +20,14 @@ body {
     overflow-y: scroll;
 }
 
-#cover {
-    height: 100%;
-    background-image: url("../img/fondoi.png");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+#coverPortada {
+    object-fit: cover;
+  z-index: -1;
+  clip-path: url("#clipPath");
+  width: 500px;
+  height: 500px;
+  position: absolute;
+  top: 40px;
 }
 
 #pageTitle {
@@ -41,38 +44,87 @@ header {
     height: 200px;
     text-align: center;
     z-index: 4;
+    display: flex;
+    align-items: center;
+    width: 100%;
 }
 
-#headerHomeCard a {
-    font-family: "Rubik Mono One", monospace;
+header img{
+    width: 30px;
+}
+
+#headerHomeCard {
     margin: 0 auto;
-    position: fixed;
-    left: 0;
-    right: 0;
+    display: flex;
+    flex-flow: column;
     width: 30%;
+    position: fixed;
+    left: 50%;
+    transform: translate(-50%, 0);
     padding-top: 80px;
     padding-bottom: 40px;
-    height: 20px;
-    top: -80px;
-    background: rgba(255, 255, 255, 0.3);
+    height: 160px;
+    top: -60px;
+    transition: top 0.25s;
     box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
     backdrop-filter: blur(5.5px);
     -webkit-backdrop-filter: blur(5.5px);
     border-radius: 0px 0px 10px 10px;
     border: 1px solid rgba(255, 255, 255, 0.18);
-    transition: top 0.25s;
-    text-align: center;
     color: red;
-    font-size: 26px;
+    background: rgba(255, 255, 255, 0.3);
+    align-items: center;
 }
 
-#headerHomeCard a:hover {
+#headerHomeCard a {
+    font-family: "Rubik Mono One", monospace;
+    text-align: center;
+    font-size: 26px;
+    padding-bottom: 5px;
+}
+
+#headerHomeCard:hover {
     top: 0;
     background: red;
     box-shadow: initial;
-    border: 1px solid red;
+    border: 1px solid rgb(0, 0, 0);
     color: black;
 }
+
+@keyframes snakeIn {
+
+    from {
+        transform: rotate(0deg);
+        transform-origin: center;
+    }
+
+    to {
+        transform: rotate(-180deg);
+        transform-origin: center;
+    }
+}
+
+@keyframes snakeOut {
+
+    from {
+        transform: rotate(-180deg);
+        transform-origin: center;
+    }
+
+    to {
+        transform: rotate(0deg);
+        transform-origin: center;
+    }
+}
+
+.snakeMove{
+    animation: snakeIn 1s forwards;
+}
+
+.snakeReturn{
+    animation: snakeOut 1s forwards;
+}
+
 
 h1 {
     font-family: "Rubik Mono One", monospace;
@@ -80,7 +132,7 @@ h1 {
     font-size: 1.5rem;
     text-align: center;
     margin: auto;
-    padding: 120px 60px 0;
+    padding: 180px 60px 0;
     font-size: 100px;
     color: red;
 }
@@ -119,6 +171,14 @@ p {
     flex-wrap: wrap;
     flex-direction: column;
     gap: 110px;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
 #footerMenu {
@@ -131,10 +191,32 @@ p {
     right: 0;
     transition: bottom 0.25s;
     margin: 0 auto;
+    text-align: center;
+}
+
+#footerMenu img{
+    width: 200px;
+    position: absolute;
+    left: 20px;
+    top:40px;
+    opacity: 0;
+}
+
+#footerMenu #mirrorImg{
+    width: 200px;
+    position: absolute;
+    left: initial;
+    right: 20px;
+    opacity: 0;
+    transform: scaleX(-1);
 }
 
 #footerMenu.footerActive{
     bottom: 0;
+}
+
+#footerMenu.footerActive img, #footerMenu.footerActive #mirrorImg{
+    opacity: 1;
 }
 
 #footerMenu div {
@@ -280,6 +362,10 @@ p {
     width: 350px;
 }
 
+#altCover {
+    width: 100%;
+}
+
 #firstAbout {
     grid-row: 1;
     grid-column: span 2;
@@ -292,15 +378,155 @@ p {
 
 blockquote {
     margin: 20px;
-    padding-left: 15px;
-    border-left: #000000 3px solid;
     grid-row: 3;
     grid-column: span 3;
+    display: flex;
+    align-items:flex-end;
+    flex-flow: column;
+}
+
+blockquote p{
+    padding-left: 20px;
+    border-left: #000000 3px solid;
+}
+
+#arrowContainer{
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    width: 100%;
+    margin-top: 40px;
+}
+
+#arrowContainer p {
+   color: red;
+   font-family: "Rubik Mono One", monospace;
+   font-weight: 400;
+   font-size: 1.5rem;
+   padding-bottom: 10px;
+   opacity: 0;
+}
+
+#drawableArrow{
+    width: 300px;
+    height: auto;
+    cursor: pointer;
+}
+
+#drawableArrow path {
+    stroke-width: 1;
+    stroke-dasharray: 0;
+    stroke: red;
+}
+
+@keyframes draw {
+    to {
+        stroke-dasharray: 6;
+    }
+}
+
+@keyframes undraw {
+
+    from {
+        stroke-dasharray: 6;
+    }
+
+    to {
+        stroke-dasharray: 0;
+    }
+}
+
+@keyframes blink {
+
+    0% {
+        opacity: 0;
+    }
+
+    5% {
+        opacity: 1;
+    }
+
+    10% {
+        opacity: 0;
+    }
+
+    15% {
+        opacity: 1;
+    }
+
+    20% {
+        opacity: 0;
+    }
+
+    25% {
+        opacity: 1;
+    }
+
+    30% {
+        opacity: 0;
+    }
+
+    35% {
+        opacity: 1;
+    }
+
+
+    40% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.blink{
+    animation: blink 1s forwards;
+}
+
+.hide{
+    opacity: 0;
+}
+
+#drawableArrow path:nth-child(2) {
+    fill: red;
+}
+
+#drawableArrow path:nth-child(1) {
+    animation: undraw 1s forwards;
+}
+
+#drawableArrow:hover path:nth-child(1) {
+    animation: draw 2s forwards;
+}
+
+#eyeSymbol {
+    margin-top: 10px;
+    width: 10%;
 }
 
 #lastAbout {
     grid-row: 2;
     grid-column: span 3;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+}
+
+#lastAbout p{
+    width: 100%;
+}
+
+#lastAbout figure{
+    display: flex;
+    flex-flow: column;
+    align-items: left;
+    margin-top: 40px;
+    text-align: left;
+}
+
+#lastAbout figcaption{
+    margin-top: 10px;
 }
 
 span {
@@ -333,7 +559,7 @@ span {
 
 }
 
-#aboutPage img {
+#aboutPage #redBox img {
     width: 70%;
     padding-bottom: 5px;
 }
@@ -387,15 +613,14 @@ figcaption {
 }
 
 
-
 @media only screen and (max-width: 768px) {
 
     header {
         height: 150px;
     }
 
-    #headerHomeCard a {
-        width: 55%;
+    #headerHomeCard{
+        width:50%;
     }
 
     #cataloguePage,
@@ -412,9 +637,30 @@ figcaption {
         margin-bottom: 30px;
     }
 
+    #coverPortada {
+        width: 380px;
+        height: 380px;
+        top: 80px;
+    }
+
+    #footerMenu img {
+        opacity: 0;
+        width: 100px;
+        position: absolute;
+        left: 10px;
+    }
+
+    #footerMenu #mirrorImg {
+        left: initial;
+        opacity: 0;
+        width: 100px;
+        position: absolute;
+        right: 10px;
+        transform: scaleX(-1);
+    }
 
     h1 {
-        font-size: 2.8rem;
+        font-size: 3rem;
         width: 100%;
         padding: 120px 0px 0;
     }
@@ -507,7 +753,7 @@ figcaption {
         width: 100%;
     }
 
-    #aboutPage img {
+    #aboutPage #redBox img {
         width: 100%;
     }
 
@@ -544,6 +790,10 @@ figcaption {
 
 @media only screen and (min-width: 768px) and (max-width: 1024px) {
 
+    h1 {
+        width: 100%;
+    }
+
     h2 {
         font-size: 3rem;
     }
@@ -552,10 +802,6 @@ figcaption {
     #cdInfo h3 {
         font-size: 2.5rem;
         overflow-wrap: anywhere;
-    }
-
-    #headerHomeCard a {
-        width: 50%;
     }
 
     #pageTitle {
@@ -602,7 +848,7 @@ figcaption {
     }
 
 
-    #aboutPage img {
+    #aboutPage #redBox img {
         width: 80%;
         padding-bottom: 5px;
     }
