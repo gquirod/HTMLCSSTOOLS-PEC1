@@ -50,7 +50,7 @@ if (window.innerWidth < 768){
     svgArrow.removeEventListener('mouseover', addHoveredStateToText);
     svgArrow.removeEventListener('mouseout', hideText);
     svgArrow.removeEventListener('click', goToTop);
-    svgArrow.addEventListener('touchstart', goToTop);
+    svgArrow.addEventListener('touchend', goToTop);
   }
   if(headerHomeCard){
     headerHomeCard.removeEventListener('mouseover', activeHeaderState);
@@ -65,7 +65,7 @@ if (window.innerWidth < 768){
   svgArrow.addEventListener('mouseout', hideText);
   svgArrow.addEventListener('mouseover', addHoveredStateToText);
   svgArrow.addEventListener('click', goToTop);
-  svgArrow.removeEventListener('touchstart', goToTop);
+  svgArrow.removeEventListener('touchend', goToTop);
   }
   if(headerHomeCard){
     headerHomeCard.addEventListener('mouseover', activeHeaderState);
