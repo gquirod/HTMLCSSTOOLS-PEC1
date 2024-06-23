@@ -556,6 +556,10 @@ span {
     width: 100%;
 }
 
+#insertedVideo lite-youtube{
+    max-width: unset;
+}
+
 #aboutPage #redBox img {
     width: 70%;
     padding-bottom: 5px;
