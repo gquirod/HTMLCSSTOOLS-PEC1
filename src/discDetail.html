@@ -11,10 +11,8 @@
   <link rel="stylesheet" href="css/styles.css"/>
   <script type="module" async src="script/app.js"></script>
   <meta content="width=device-width, initial-scale=1" name="viewport" />
-  <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> -->
   <link rel="stylesheet" href="../node_modules/lite-youtube-embed/src/lite-yt-embed.css"/>
-  <link defer href="https://fonts.googleapis.com/css2?family=Rubik+Mono+One&display=swap" rel="stylesheet">
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Rubik+Mono+One&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <link
     defer href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&family=Rubik+Mono+One&display=swap"
     rel="stylesheet">
@@ -32,7 +30,7 @@
         <picture>
           <source media="(max-width: 1024px)" srcset="img/trippingyou-cut.jpg?as=webP"  type="image/webp"/>
           <source media="(min-width: 1024px)" srcset="img/a2010261979_10.jpg?as=webP&width=350" type="image/webp"/>
-          <img src="img/a2010261979_10.jpg" alt="Imagen de portada del disco Vaciador, con un grupo de jóvenes encapuchados">
+          <img height="382" width="530" src="img/a2010261979_10.jpg" alt="Imagen de portada del disco Vaciador, con un grupo de jóvenes encapuchados">
         </picture>
         </div>
         <div id="firstAbout"><h3>Sobre el disco</h3>
@@ -54,8 +52,8 @@
           </p>
           <img
             loading="lazy"
-            width="117px" 
-            height="99px"
+            width="75"
+            height="63"
             srcset="img/eyemoji-65.webp 65w, img/eyemoji-120.webp 120w"
             sizes="(max-width: 768px) 65px, 120px"
             src="img/eyemoji-65.webp"
@@ -69,7 +67,7 @@
           <figure>
             <img
             loading="lazy"   
-            srcset="img/portadaAlternativa-360.jpg?as=webp, img/portadaAlternativa-480.jpg?as=webp 1.5x, img/portadaAlternativa-640.jpg?as=webp 2x"
+            srcset="img/portadaAlternativa-360.jpg?as=webp, img/portadaAlternativa-480.jpg?as=webp&width=300 1.5x, img/portadaAlternativa-640.jpg?as=webp&width=320 2x"
             src="img/portadaAlternativa-480.jpg" 
             alt="Imagen alternativa para la portada del disco Vaciador"
             width="325px" 
