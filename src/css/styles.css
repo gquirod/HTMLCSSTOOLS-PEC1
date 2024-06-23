@@ -554,12 +554,7 @@ span {
     position: relative;
     overflow: hidden;
     width: 100%;
-    padding-top: 56.25%;
 }
-
-/* #insertedVideo lite-youtube {
-    max-width: unset;
-} */
 
 #aboutPage #redBox img {
     width: 70%;
