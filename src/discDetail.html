@@ -11,8 +11,10 @@
   <link rel="stylesheet" href="css/styles.css"/>
   <script type="module" async src="script/app.js"></script>
   <meta content="width=device-width, initial-scale=1" name="viewport" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> -->
+  <link rel="preload" href="../node_modules/lite-youtube-embed/src/lite-yt-embed.css"/>
+  <script defer src="../node_modules/lite-youtube-embed/src/lite-yt-embed.js"></script>
   <link href="https://fonts.googleapis.com/css2?family=Rubik+Mono+One&display=swap" rel="stylesheet">
   <link
     href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&family=Rubik+Mono+One&display=swap"
@@ -53,6 +55,8 @@
           </p>
           <img
             loading="lazy"
+            width="117px" 
+            height="99px"
             srcset="img/eyemoji-65.webp 65w, img/eyemoji-120.webp 120w"
             sizes="(max-width: 768px) 65px, 120px"
             src="img/eyemoji-65.webp"
@@ -91,13 +95,20 @@
     </ul>
 
     <h3 class="discSubTitles">VÍDEO</h3>
-    <div id="insertedVideo"><iframe src="https://www.youtube.com/embed/kkq4AQ-VrvU?si=Y7juJ4Q6jW89G-Ko"
+    <div id="insertedVideo">
+      <lite-youtube videoid="kkq4AQ-VrvU" style="background-image: url('https://i.ytimg.com/vi_webp/kkq4AQ-VrvU/maxresdefault.webp');">
+        <a href="https://www.youtube.com/embed/kkq4AQ-VrvU?si=Y7juJ4Q6jW89G-Ko" class="lty-playbtn" title="Play Video">
+        </a>
+      </lite-youtube>
+      
+      <!-- <iframe src="https://www.youtube.com/embed/kkq4AQ-VrvU?si=Y7juJ4Q6jW89G-Ko"
         title="YouTube video player"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> -->
+      
+      </div>
     <include src="src/components/scrollToTop.html"></include>
     <include src="src/components/footerMenu.html"></include>
   </main>
 </body>
-
 </html>

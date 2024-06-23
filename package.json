@@ -20,6 +20,7 @@
     "rimraf": "^5.0.5"
   },
   "dependencies": {
+    "lite-youtube-embed": "^0.3.2",
     "sharp": "^0.31.1",
     "vanilla-tilt": "^1.8.1"
   }
